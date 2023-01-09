@@ -1,0 +1,7 @@
+<p>beer-list works!</p>
+<select #id (change)="setActualBeer(id.value)">
+  <option selected value="DEFAULT">Wybierz Piwo</option>
+    <option  value="{{beer.id}}"  *ngFor="let beer of BeerList">{{beer.id}} {{beer.name}}</option>
+</select>
+
+<button (click)="delete()">Usuń</button>

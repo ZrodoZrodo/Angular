@@ -1,0 +1,13 @@
+<p>beer-update works!</p>
+
+<select #id (change)="setActualBeer(id.value)">
+  <option selected value="DEFAULT">Wybierz Piwo</option>
+  <option  value="{{beer.id}}"  *ngFor="let beer of BeerList">{{beer.id}} {{beer.name}}</option>
+</select>
+<div *ngIf="Beer">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <input [ngModel]="Beer.name" name="name"  >
+  <input [ngModel]="Beer.description" name="description" >
+  <button>Submit</button>
+</form>
+</div>
